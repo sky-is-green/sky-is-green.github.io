@@ -1,0 +1,89 @@
+{
+  "name": "plain_baseline",
+  "url": "https://USER.github.io",
+  "modules": 29,
+  "config": [
+    "auto",
+    null
+  ],
+  "cases": [
+    {
+      "case": "1024px square",
+      "decoded": true,
+      "text": "https://USER.github.io",
+      "expected": "scan"
+    },
+    {
+      "case": "1024px circle",
+      "decoded": true,
+      "text": "https://USER.github.io",
+      "expected": "scan"
+    },
+    {
+      "case": "460px square",
+      "decoded": true,
+      "text": "https://USER.github.io",
+      "expected": "scan"
+    },
+    {
+      "case": "460px circle",
+      "decoded": true,
+      "text": "https://USER.github.io",
+      "expected": "scan"
+    },
+    {
+      "case": "260px square",
+      "decoded": true,
+      "text": "https://USER.github.io",
+      "expected": "scan"
+    },
+    {
+      "case": "260px circle",
+      "decoded": true,
+      "text": "https://USER.github.io",
+      "expected": "scan"
+    },
+    {
+      "case": "130px square",
+      "decoded": true,
+      "text": "https://USER.github.io",
+      "expected": "scan"
+    },
+    {
+      "case": "130px circle",
+      "decoded": true,
+      "text": "https://USER.github.io",
+      "expected": "scan"
+    },
+    {
+      "case": "40px square",
+      "decoded": false,
+      "text": null,
+      "expected": "no-scan (intrigue size)"
+    },
+    {
+      "case": "40px circle",
+      "decoded": false,
+      "text": null,
+      "expected": "no-scan (intrigue size)"
+    },
+    {
+      "case": "260px circle blur0.8",
+      "decoded": true,
+      "text": "https://USER.github.io",
+      "expected": "scan"
+    },
+    {
+      "case": "260px circle blur1.2",
+      "decoded": true,
+      "text": "https://USER.github.io",
+      "expected": "scan"
+    },
+    {
+      "case": "260px circle jpeg q50",
+      "decoded": true,
+      "text": "https://USER.github.io",
+      "expected": "scan"
+    }
+  ]
+}

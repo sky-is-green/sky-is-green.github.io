@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "updated": "2026-10-18",
+    "note": "Open projects: work that is not finished. Cards have the same shape as data/projects.json (title, hook, bullets, tags, repo/demo/models), plus `status`: the badge on the card's head row where a work card shows 'fork work'. `tok_s` is optional here as it is there; open cards show no tok/s readout. Copy comes from the author's own notes and session logs, not from a write-up: edit the wording here rather than paraphrasing it in code. The cards speak in the first person singular: it is one person's build log, so 'I', never 'we'."
+  },
+  "open": [
+    {
+      "title": "a DIY otamatone",
+      "status": "parts sourced",
+      "hook": "A small electronics project: make my own Otamatone, parts-sourced rather than printed. The 3D printer is there and I can model my own parts, but that isn't the job: sourcing the electronics was.",
+      "bullets": [
+        "The touchpad is the slider and the speaker sits inside flexible plastic; the wah comes from opening and closing the mouth, not from a button",
+        "Two Arduinos spare, so a theremin-style light instrument joins the same parts list: an LDR for pitch, a button as its mouth",
+        "Open question: whether the TTP223 touch switches can be wired in parallel for the slider",
+        "Ready to build once I upgrade my soldering iron"
+      ],
+      "tags": ["electronics", "audio", "3D printing"]
+    },
+    {
+      "title": "a wearable Daft Punk talk box",
+      "status": "parts sourced",
+      "hook": "A battery-powered talk box on your back: a phone synth app feeds a horn compression driver, and food-grade tubing carries the sound into the corner of your mouth, where your lips do the shaping.",
+      "bullets": [
+        "Phone synth (Caustic 3 or Animoog) into a USB-C aux adapter and a mini amp board, with a Bluetooth ring for pitch-bend on my finger",
+        "A 1\" horn compression driver squeezes the audio to shoot up the hose; a bipolar capacitor is the passive high-pass that keeps it from blowing",
+        "3/8\" food-grade vinyl tubing, barb-coupled and taped airtight, about 1.5cm into the corner of the lips",
+        "The driver, the 12V pack and the amp ride on the back as a counterweight, and the mouth area of the helmet needs an acoustic cutout so the shaped vocals project",
+        "Ready to build once I upgrade my soldering iron"
+      ],
+      "tags": ["electronics", "audio", "cosplay"]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-page="games">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>games · sky-is-green</title>
+<meta name="description" content="Small games and toys on the same phosphor glass as the rest of sky-is-green.">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<a class="skip" href="#games">skip to content</a>
+
+<header class="bar wrap">
+  <a class="brand" href="../"><span class="brand-mark" aria-hidden="true">▚</span> sky-is-green</a>
+  <nav class="menu" aria-label="main menu">
+    <a href="../#about"><span class="num" aria-hidden="true">1</span>about</a>
+    <a href="../#work"><span class="num" aria-hidden="true">2</span>work</a>
+    <a href="../#open"><span class="num" aria-hidden="true">3</span>open projects</a>
+    <a href="../#contact"><span class="num" aria-hidden="true">4</span>contact</a>
+    <a href="./" aria-current="page"><span class="num" aria-hidden="true">5</span>games</a>
+  </nav>
+  <button class="crt-toggle" id="crt-toggle" type="button" aria-pressed="true" title="toggle the CRT look">▮&nbsp;crt</button>
+</header>
+
+<main>
+  <section class="wrap" id="games" aria-labelledby="sec-games">
+    <h2 class="sec-label" id="sec-games"><span aria-hidden="true">[</span> games <span aria-hidden="true">]</span></h2>
+    <div class="cade">
+      <div class="cade-games">
+      <p class="dim cade-intro">
+        Small things to poke at, running on the same glass as everything else here: frame, scanlines,
+        and whatever the supply does to all of them at once. Arrow keys or WASD, or your finger.
+      </p>
+      <article class="cab" id="cab-snake">
+        <div class="scr" data-game="snake">
+          <canvas class="cab-canvas" width="320" height="200" aria-label="snake"></canvas>
+          <div class="cab-hud" aria-hidden="true"><span class="hud-score">0</span> <span class="hud-hi">HI 0</span></div>
+          <div class="cab-plate">
+            <span class="plate-num">[ 01 ]</span>
+            <h3 class="plate-title">Snake</h3>
+            <p class="cab-hint">tap or press <span class="key">enter</span></p>
+          </div>
+        </div>
+        <p class="cab-foot dim">Eat, grow, do not fold back on yourself.</p>
+      </article>
+
+      <article class="cab" id="cab-breakout">
+        <div class="scr" data-game="breakout">
+          <canvas class="cab-canvas" width="320" height="200" aria-label="breakout"></canvas>
+          <div class="cab-hud" aria-hidden="true"><span class="hud-score">0</span> <span class="hud-hi">HI 0</span></div>
+          <div class="cab-plate">
+            <span class="plate-num">[ 02 ]</span>
+            <h3 class="plate-title">Breakout</h3>
+            <p class="cab-hint">tap or press <span class="key">enter</span></p>
+          </div>
+        </div>
+        <p class="cab-foot dim">A wall of bits. Move with the mouse or the arrows.</p>
+      </article>
+      </div>
+
+    <article class="cab cab-wide" id="cab-pixelqr">
+      <div class="scr" data-game="pixelqr">
+        <!-- src is set by games.js once the path is known to answer: a frame
+             that points at a missing project page just shows GitHub's 404 -->
+        <iframe class="cab-frame" data-src="../../pixelqr/" title="PixelQR: paint pixel art that is a real, scannable QR code"></iframe>
+        <p class="cab-fallback dim"></p>
+      </div>
+      <p class="cab-foot dim">
+        <strong>PixelQR</strong>: paint pixel art; it stays a real, scannable QR code.
+        <span class="cab-return">Tap it to bring it back to the middle.</span>
+        <a href="../../pixelqr/" target="_blank" rel="noopener">open it full size ↗</a>
+      </p>
+    </article>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p class="eof dim">EOF<span class="cursor" aria-hidden="true">▮</span> · press <span class="key">1</span>–<span class="key">5</span> to travel · © <span id="year"></span> sky-is-green</p>
+</footer>
+
+<script src="../screen.js"></script>
+<script src="games.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ricky · sky-is-green</title>
+<meta name="description" content="Ricky (sky-is-green): low-bit systems, ternary quantization, inference engines, and things taken apart to be rebuilt smaller.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230b0d0b'/%3E%3Crect x='3' y='3' width='10' height='10' fill='none' stroke='%235df08a' stroke-width='2'/%3E%3Crect x='6' y='6' width='4' height='4' fill='%235df08a'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#work">skip to work</a>
+
+<header class="bar wrap">
+  <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">▚</span> sky-is-green</a>
+  <nav class="menu" aria-label="main menu">
+    <a href="#about"><span class="num" aria-hidden="true">1</span>about</a>
+    <a href="#work"><span class="num" aria-hidden="true">2</span>work</a>
+    <a href="#open"><span class="num" aria-hidden="true">3</span>open projects</a>
+    <a href="#contact"><span class="num" aria-hidden="true">4</span>contact</a>
+    <a href="games/"><span class="num" aria-hidden="true">5</span>games</a>
+  </nav>
+  <button class="crt-toggle" id="crt-toggle" type="button" aria-pressed="true" title="toggle the CRT look">▮&nbsp;crt</button>
+</header>
+
+<main id="top">
+
+  <section class="hero wrap" aria-labelledby="hero-tagline">
+    <div class="hero-in">
+      <div class="hero-text">
+        <p class="hello"><span class="prompt" aria-hidden="true">&gt;</span> <span id="profile-name">…</span><span class="cursor" aria-hidden="true">▮</span></p>
+        <h1 id="hero-tagline"></h1>
+        <p class="sub" id="hero-links"></p>
+      </div>
+      <figure class="avatar">
+        <img id="hero-avatar" src="assets/qr/hero-qr.png" width="820" height="820" alt="Pixel art rendered as a fully scannable QR code. It points at this page">
+        <figcaption>
+          <span class="scan-line">scan → this page</span>
+          <span class="dim">drawn inside the canvas of its own QR · <a href="games/#cab-pixelqr">PixelQR</a></span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="skills" id="skills"></div>
+  </section>
+
+  <section id="about" class="wrap" aria-labelledby="sec-about">
+    <h2 class="sec-label" id="sec-about"><span aria-hidden="true">[</span> about <span aria-hidden="true">]</span></h2>
+    <div class="about" id="about-body"></div>
+  </section>
+
+  <section id="work" class="wrap" aria-labelledby="sec-work">
+    <h2 class="sec-label" id="sec-work"><span aria-hidden="true">[</span> work <span aria-hidden="true">]</span></h2>
+    <div class="filters" id="filters" role="group" aria-label="filter projects by tag"></div>
+    <div class="tumbler" id="tumbler" role="group" aria-roledescription="carousel" aria-label="projects">
+      <!-- A pad the width of the rail, set by sizeDrum(): the rail is in the row
+           with the frame, so without it the frame sits half a rail left of the
+           section's centre line. -->
+      <div class="tum-pad" aria-hidden="true"></div>
+      <!-- The scroller and the monitor are siblings, not parent and child: the
+           monitor is positioned against the frame and simply painted over the
+           scroller. The stage used to sit inside the scroller relying on
+           position: sticky, but sticky never applied — screen.js mounts class
+           "scr" on the stage and .scr's later position: relative wins the
+           cascade, so the stage scrolled away with the content and the drum
+           read as a blank gap (verified in Firefox). The scroller is now only
+           what generates scroll input; the stage never moves with it. -->
+      <div class="tum-frame" id="tum-frame">
+        <div class="tum-viewport" id="tum-viewport" tabindex="0" aria-label="projects: scroll, swipe, or use the arrow keys">
+          <div class="tum-space" id="tum-space" aria-hidden="true"></div>
+        </div>
+        <div class="tum-stage" id="tum-stage">
+          <div class="tum-drum" id="tum-drum"></div>
+          <!-- the monitor chrome (glass, signal, frame) is mounted by screen.js -->
+        </div>
+      </div>
+      <div class="tum-side">
+        <button class="tum-btn" id="tum-up" type="button" aria-label="previous project">[&nbsp;▲&nbsp;]</button>
+        <button class="tum-btn" id="tum-down" type="button" aria-label="next project">[&nbsp;▼&nbsp;]</button>
+      </div>
+    </div>
+    <div class="ticks" id="tum-ticks" role="group" aria-label="jump to project"></div>
+    <p class="dim count" id="count" aria-live="polite"></p>
+  </section>
+
+  <section id="open" class="wrap" aria-labelledby="sec-open">
+    <h2 class="sec-label" id="sec-open"><span aria-hidden="true">[</span> open projects <span aria-hidden="true">]</span></h2>
+    <!-- The drum's cards, slid sideways instead of rolled: one monitor over a
+         scroll-snap track, one card centred at a time with a sliver of each
+         neighbour left showing. The centred card is the awake one; the slivers
+         hold their standby plates. -->
+    <div class="caro" id="caro">
+      <div class="caro-track" id="caro-track" tabindex="0" role="group" aria-roledescription="carousel" aria-label="open projects: scroll, swipe, drag, or use the arrow keys"></div>
+    </div>
+    <div class="caro-side" id="caro-side">
+      <button class="tum-btn" id="caro-prev" type="button" aria-label="previous open project">[&nbsp;◀&nbsp;]</button>
+      <button class="tum-btn" id="caro-next" type="button" aria-label="next open project">[&nbsp;▶&nbsp;]</button>
+    </div>
+    <div class="ticks" id="caro-ticks" role="group" aria-label="jump to open project"></div>
+    <p class="dim count" id="caro-count" aria-live="polite"></p>
+  </section>
+
+  <section id="contact" class="wrap" aria-labelledby="sec-contact">
+    <h2 class="sec-label" id="sec-contact"><span aria-hidden="true">[</span> contact <span aria-hidden="true">]</span></h2>
+    <div class="contact" id="contact-body">
+      <p class="contact-intro" id="contact-intro"></p>
+      <!-- The address is a Firefox Relay alias: mail sent to it is forwarded to
+           the real inbox, and the inbox is in no file in this repo — only the
+           alias is published. app.js fills it in from data/profile.json. -->
+      <div class="contact-box">
+        <span class="contact-label">write to</span>
+        <a class="contact-addr" id="contact-mail" href="#">…</a>
+        <div class="contact-actions">
+          <button class="contact-btn" type="button" id="contact-copy">[ copy ]</button>
+        </div>
+      </div>
+      <p class="contact-note" id="contact-note"></p>
+    </div>
+  </section>
+
+</main>
+
+<footer id="colophon" class="wrap">
+  <div class="links" id="contact-links"></div>
+  <p class="eof dim">EOF · press <span class="key">1</span>–<span class="key">4</span> to travel · © <span id="year"></span> sky-is-green</p>
+</footer>
+
+<noscript><p class="wrap dim">This page renders its content from <code>data/*.json</code>: please enable JavaScript (it's all static and same-origin).</p></noscript>
+
+<script src="screen.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

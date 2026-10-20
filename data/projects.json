@@ -1,0 +1,157 @@
+{
+  "meta": {
+    "updated": "2026-10-16",
+    "policy": "Public repos only; only work with a large personal contribution. Fork / engine work is listed as 'contributions', labeled with the personal commit count.",
+    "tok_s": "Displayed generation rate for a card: the record types itself in at this speed when the card comes to the front. It is flavour, so set it to a real measured throughput per project, or drop the field to fall back to 60."
+  },
+  "projects": [
+    {
+      "slug": "scion",
+      "kind": "project",
+      "title": "Scion",
+      "tok_s": 68,
+      "hook": "Ternary MoE quantization with trained corrections: the harness behind the released Scion-35B-A3B and Scion-FlashNext-176B-A6B.",
+      "bullets": [
+        "Ternarises the expert banks of a pretrained MoE in place, then recovers the routing damage with small trained corrections on the residual stream: no full-precision masters, no full-model QAT",
+        "The frozen body ships at ~2.125 bpw (Q1_0_g128 / PQ2_0 ternary experts, Q8_0 for the rest)",
+        "Harness, port decisions and release docs, cloned and run on their own"
+      ],
+      "tags": ["quantization", "LLM"],
+      "repo": "https://github.com/sky-is-green/scion",
+      "models": [
+        "https://huggingface.co/SkyIsNotGreen/Scion-35B-A3B",
+        "https://huggingface.co/SkyIsNotGreen/Scion-FlashNext-176B-A6B"
+      ],
+      "status": "active",
+      "featured": true
+    },
+    {
+      "slug": "splinter-memory",
+      "kind": "project",
+      "title": "Splinter Memory",
+      "tok_s": 52,
+      "hook": "An external, managed-decay context-curation layer for long-horizon LLM conversations.",
+      "bullets": [
+        "Context lives outside the model and decays by policy, not by truncation",
+        "Python / PyTorch / FastAPI with a full CI pipeline"
+      ],
+      "tags": ["memory", "LLM"],
+      "repo": "https://github.com/sky-is-green/splinter-memory",
+      "status": "active",
+      "featured": true
+    },
+    {
+      "slug": "hivebench",
+      "kind": "project",
+      "title": "HiveBench",
+      "tok_s": 61,
+      "hook": "Evaluation suite and Studio sidecar for Splinter Memory.",
+      "bullets": [
+        "Benchmarks the memory system end-to-end, runnable against your own models"
+      ],
+      "tags": ["memory", "evaluation"],
+      "repo": "https://github.com/sky-is-green/hivebench",
+      "status": "active",
+      "featured": true
+    },
+    {
+      "slug": "bonsai2-ternary-forensics",
+      "kind": "project",
+      "title": "Bonsai 2 ternary forensics",
+      "tok_s": 47,
+      "hook": "Independent forensics on Bonsai 2 27B: recovering a ~2 bpw ternary model's format, basis, and quality gap.",
+      "bullets": [
+        "Recovered the storage format and the rotation basis of Bonsai 2 27B (Prism ML's ternary model built from Qwen3.8-27B)",
+        "Localized the quality gap to the trained weights, and showed a widely cited public PTQ baseline is a calibration-passage artifact"
+      ],
+      "tags": ["quantization", "forensics"],
+      "repo": "https://github.com/sky-is-green/bonsai2-ternary-forensics",
+      "status": "active",
+      "featured": true
+    },
+    {
+      "slug": "strata",
+      "kind": "contribution",
+      "title": "Strata: engine fork work",
+      "tok_s": 55,
+      "hook": "Kernel fusions and speculative decoding in the Strata inference engine (fork of Niko1221/Strata).",
+      "bullets": [
+        "Fused kernels with measured per-change wins on the 35B (router tail 8.84→8.69; shared-expert down kernel 8.64→8.54)",
+        "The k=1 MTP drafter (--mtp-sidecar) plus the probes the drafter trains from",
+        "31 commits in a ~2,200-commit engine"
+      ],
+      "tags": ["inference", "kernels"],
+      "repo": "https://github.com/sky-is-green/Strata",
+      "contribution": "31 commits, fork work",
+      "status": "active",
+      "featured": true
+    },
+    {
+      "slug": "pixelqr",
+      "kind": "project",
+      "title": "PixelQR",
+      "tok_s": 71,
+      "hook": "Pixel art that becomes a real, scannable QR code.",
+      "bullets": [
+        "Writable canvas: zero random code cells inside the drawing area, re-verified with a real decoder after every edit",
+        "Payload-freedom solver: free exact cell fixes (GF(2)) from the bytes decoders never read",
+        "Six decode-verified render styles; styled PNG / SVG / 1024px avatar exports",
+        "No build step, no CDN: only the vendored encoder and decoder"
+      ],
+      "tags": ["interactive", "generative"],
+      "repo": "https://github.com/sky-is-green/pixelqr",
+      "demo": "https://sky-is-green.github.io/pixelqr/",
+      "status": "active",
+      "featured": true
+    },
+    {
+      "slug": "scrollpeak",
+      "kind": "project",
+      "title": "ScrollPeak",
+      "tok_s": 64,
+      "hook": "A scrollbar minimap for Firefox: hover the scrollbar to see the whole page as a small map, click to jump.",
+      "bullets": [
+        "The map is the page's own rendering, scaled down; falls back to a text raster when the page can't be cloned",
+        "A port of the minimap from KDE's Kate editor"
+      ],
+      "tags": ["firefox", "UI"],
+      "repo": "https://github.com/sky-is-green/scrollpeak",
+      "status": "active",
+      "featured": false
+    },
+    {
+      "slug": "deepseek-harness",
+      "kind": "contribution",
+      "title": "DeepSeek Harness: plugin work",
+      "tok_s": 43,
+      "hook": "Plugins and tooling for the DeepSeek Harness (fork of deepseek-ai/deepseek-harness).",
+      "bullets": [
+        "context-strata plugin: session context wired into the agent loop",
+        "Studio wizard and host integration; verify gates for model launches",
+        "80 commits in the fork"
+      ],
+      "tags": ["LLM", "plugins"],
+      "repo": "https://github.com/sky-is-green/deepseek-harness",
+      "contribution": "80 commits, fork work",
+      "status": "active",
+      "featured": false
+    },
+    {
+      "slug": "prism",
+      "kind": "contribution",
+      "title": "Prism: llama.cpp engine work",
+      "tok_s": 39,
+      "hook": "MoE expert-residency experiments in a llama.cpp fork.",
+      "bullets": [
+        "FreeToken-style MoE expert slot cache (decode), with identity promotion for fully-covered caches",
+        "Kernel fusion experiments with a measurement rig; notes archived in-repo",
+        "19 commits in the fork"
+      ],
+      "tags": ["inference", "MoE"],
+      "repo": "https://github.com/sky-is-green/prism-ml-llama.cpp",
+      "contribution": "19 commits, fork work",
+      "status": "active",
+      "featured": false
+    }
+  ]
+}
