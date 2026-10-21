@@ -16,7 +16,7 @@ project repo is the only source.
 
 To refresh it in the meantime:
 
-    cp index.html style.css core.js app.js favicon.svg /path/to/site/pixelqr/
+    cp index.html style.css core.js app.js reader.js favicon.svg /path/to/site/pixelqr/
     cp lib/qrcode.js lib/jsQR.js /path/to/site/pixelqr/lib/
     cp assets/fonts/*.woff2 /path/to/site/pixelqr/assets/fonts/
 
