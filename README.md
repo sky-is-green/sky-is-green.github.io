@@ -13,7 +13,8 @@ the things I take apart to understand, and rebuild smaller.
   address (email, subject and the copy)
 - `data/projects.json`: the curated work list. Policy: **public repos only**,
   and only work with a large personal contribution; fork/engine work appears as
-  *contributions*, labeled with the personal commit count
+  *contributions*, labeled with the personal commit count. Cards can link a
+  repo, models, a demo and papers; the Hive card links both papers
 - `data/open.json`: open projects, what is not finished. Same card shape as
   the work list, plus a `status`, which is the badge on the card's head row;
   the cards slide rather than roll

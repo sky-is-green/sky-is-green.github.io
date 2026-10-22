@@ -290,6 +290,7 @@
     if (p.repo) links.append(Object.assign(elem('a', null, 'repo'), { href: p.repo }));
     (p.models || []).forEach((m, i) => links.append(Object.assign(elem('a', null, 'model ' + (i + 1)), { href: m })));
     if (p.demo) links.append(Object.assign(elem('a', null, 'demo'), { href: p.demo }));
+    (p.papers || []).forEach((u, i) => links.append(Object.assign(elem('a', null, 'paper ' + (i + 1)), { href: u })));
     if (links.children.length) body.append(links);
 
     col.append(body);

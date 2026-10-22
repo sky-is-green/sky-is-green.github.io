@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updated": "2026-10-16",
-    "policy": "Public repos only; only work with a large personal contribution. Fork / engine work is listed as 'contributions', labeled with the personal commit count.",
+    "updated": "2026-10-22",
+    "policy": "Public repos only; only work with a large personal contribution. Fork / engine work is listed as 'contributions', labeled with the personal commit count. Cards link the repo, models, demo and papers where those exist.",
     "tok_s": "Displayed generation rate for a card: the record types itself in at this speed when the card comes to the front. It is flavour, so set it to a real measured throughput per project, or drop the field to fall back to 60."
   },
   "projects": [
@@ -16,11 +16,38 @@
         "The frozen body ships at ~2.125 bpw (Q1_0_g128 / PQ2_0 ternary experts, Q8_0 for the rest)",
         "Harness, port decisions and release docs, cloned and run on their own"
       ],
-      "tags": ["quantization", "LLM"],
+      "tags": [
+        "quantization",
+        "LLM"
+      ],
       "repo": "https://github.com/sky-is-green/scion",
       "models": [
         "https://huggingface.co/SkyIsNotGreen/Scion-35B-A3B",
         "https://huggingface.co/SkyIsNotGreen/Scion-FlashNext-176B-A6B"
+      ],
+      "status": "active",
+      "featured": true
+    },
+    {
+      "slug": "hive",
+      "kind": "project",
+      "title": "Hive",
+      "tok_s": 64,
+      "hook": "A local-first stack for memory, verification, and routing in language models.",
+      "bullets": [
+        "Splinter Memory: managed-decay context curation, with the white paper and code in the same repo",
+        "The Hive Cascade: a gold-free verification-and-repair loop, with the controller contract and measured tier table",
+        "HiveBench: the evaluation suite that measures both, with reproducible A/B runs and a public results log"
+      ],
+      "tags": [
+        "memory",
+        "verification",
+        "routing"
+      ],
+      "repo": "https://github.com/sky-is-green/hive",
+      "papers": [
+        "https://github.com/sky-is-green/hive/blob/main/cascade/CASCADE-PAPER.md",
+        "https://github.com/sky-is-green/hive/blob/main/splinter/SPLINTER-WHITE-PAPER.md"
       ],
       "status": "active",
       "featured": true
@@ -33,26 +60,19 @@
       "hook": "An external, managed-decay context-curation layer for long-horizon LLM conversations.",
       "bullets": [
         "Context lives outside the model and decays by policy, not by truncation",
+        "The white paper, encoder notes, figures and the full code live in hive/splinter",
         "Python / PyTorch / FastAPI with a full CI pipeline"
       ],
-      "tags": ["memory", "LLM"],
-      "repo": "https://github.com/sky-is-green/splinter-memory",
-      "status": "active",
-      "featured": true
-    },
-    {
-      "slug": "hivebench",
-      "kind": "project",
-      "title": "HiveBench",
-      "tok_s": 61,
-      "hook": "Evaluation suite and Studio sidecar for Splinter Memory.",
-      "bullets": [
-        "Benchmarks the memory system end-to-end, runnable against your own models"
+      "tags": [
+        "memory",
+        "LLM"
       ],
-      "tags": ["memory", "evaluation"],
-      "repo": "https://github.com/sky-is-green/hivebench",
+      "repo": "https://github.com/sky-is-green/hive/tree/main/splinter",
       "status": "active",
-      "featured": true
+      "featured": true,
+      "papers": [
+        "https://github.com/sky-is-green/hive/blob/main/splinter/SPLINTER-WHITE-PAPER.md"
+      ]
     },
     {
       "slug": "bonsai2-ternary-forensics",
@@ -64,7 +84,10 @@
         "Recovered the storage format and the rotation basis of Bonsai 2 27B (Prism ML's ternary model built from Qwen3.8-27B)",
         "Localized the quality gap to the trained weights, and showed a widely cited public PTQ baseline is a calibration-passage artifact"
       ],
-      "tags": ["quantization", "forensics"],
+      "tags": [
+        "quantization",
+        "forensics"
+      ],
       "repo": "https://github.com/sky-is-green/bonsai2-ternary-forensics",
       "status": "active",
       "featured": true
@@ -76,11 +99,14 @@
       "tok_s": 55,
       "hook": "Kernel fusions and speculative decoding in the Strata inference engine (fork of Niko1221/Strata).",
       "bullets": [
-        "Fused kernels with measured per-change wins on the 35B (router tail 8.84→8.69; shared-expert down kernel 8.64→8.54)",
+        "Fused kernels with measured per-change wins on the 35B (router tail 8.84\u21928.69; shared-expert down kernel 8.64\u21928.54)",
         "The k=1 MTP drafter (--mtp-sidecar) plus the probes the drafter trains from",
         "31 commits in a ~2,200-commit engine"
       ],
-      "tags": ["inference", "kernels"],
+      "tags": [
+        "inference",
+        "kernels"
+      ],
       "repo": "https://github.com/sky-is-green/Strata",
       "contribution": "31 commits, fork work",
       "status": "active",
@@ -98,7 +124,10 @@
         "Six decode-verified render styles; styled PNG / SVG / 1024px avatar exports",
         "No build step, no CDN: only the vendored encoder and decoder"
       ],
-      "tags": ["interactive", "generative"],
+      "tags": [
+        "interactive",
+        "generative"
+      ],
       "repo": "https://github.com/sky-is-green/pixelqr",
       "demo": "https://sky-is-green.github.io/pixelqr/",
       "status": "active",
@@ -114,7 +143,10 @@
         "The map is the page's own rendering, scaled down; falls back to a text raster when the page can't be cloned",
         "A port of the minimap from KDE's Kate editor"
       ],
-      "tags": ["firefox", "UI"],
+      "tags": [
+        "firefox",
+        "UI"
+      ],
       "repo": "https://github.com/sky-is-green/scrollpeak",
       "status": "active",
       "featured": false
@@ -130,7 +162,10 @@
         "Studio wizard and host integration; verify gates for model launches",
         "80 commits in the fork"
       ],
-      "tags": ["LLM", "plugins"],
+      "tags": [
+        "LLM",
+        "plugins"
+      ],
       "repo": "https://github.com/sky-is-green/deepseek-harness",
       "contribution": "80 commits, fork work",
       "status": "active",
@@ -147,7 +182,10 @@
         "Kernel fusion experiments with a measurement rig; notes archived in-repo",
         "19 commits in the fork"
       ],
-      "tags": ["inference", "MoE"],
+      "tags": [
+        "inference",
+        "MoE"
+      ],
       "repo": "https://github.com/sky-is-green/prism-ml-llama.cpp",
       "contribution": "19 commits, fork work",
       "status": "active",

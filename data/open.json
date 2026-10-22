@@ -1,9 +1,24 @@
 {
   "meta": {
-    "updated": "2026-10-18",
-    "note": "Open projects: work that is not finished. Cards have the same shape as data/projects.json (title, hook, bullets, tags, repo/demo/models), plus `status`: the badge on the card's head row where a work card shows 'fork work'. `tok_s` is optional here as it is there; open cards show no tok/s readout. Copy comes from the author's own notes and session logs, not from a write-up: edit the wording here rather than paraphrasing it in code. The cards speak in the first person singular: it is one person's build log, so 'I', never 'we'."
+    "updated": "2026-10-22",
+    "note": "Open projects: work that is not finished. Cards have the same shape as data/projects.json (title, hook, bullets, tags, repo/demo/models/papers), plus `status`: the badge on the card's head row where a work card shows 'fork work'. `tok_s` is optional here as it is there; open cards show no tok/s readout. Copy comes from the author's own notes and session logs, not from a write-up: edit the wording here rather than paraphrasing it in code. The cards speak in the first person singular: it is one person's build log, so 'I', never 'we'."
   },
   "open": [
+    {
+      "title": "the Hive checker",
+      "status": "design, not a run",
+      "hook": "The last unmeasured tier in Hive: a checker that runs the task's own tests, grounds the claims, and refuses to accept a check that passes its own mutation.",
+      "bullets": [
+        "The 176B head misses four of the seven errors at p >= 0.97; they are arithmetic and code, which a sandbox can settle and a reader cannot",
+        "The sandbox, the check-writer and the grounding verifier are specified; the measured run is next",
+        "The false-positive bar is 0 of 21 correct answers, set by the 176B head's gate"
+      ],
+      "tags": [
+        "verification",
+        "sandbox",
+        "LLM"
+      ]
+    },
     {
       "title": "a DIY otamatone",
       "status": "parts sourced",
@@ -14,7 +29,11 @@
         "Open question: whether the TTP223 touch switches can be wired in parallel for the slider",
         "Ready to build once I upgrade my soldering iron"
       ],
-      "tags": ["electronics", "audio", "3D printing"]
+      "tags": [
+        "electronics",
+        "audio",
+        "3D printing"
+      ]
     },
     {
       "title": "a wearable Daft Punk talk box",
@@ -27,7 +46,11 @@
         "The driver, the 12V pack and the amp ride on the back as a counterweight, and the mouth area of the helmet needs an acoustic cutout so the shaped vocals project",
         "Ready to build once I upgrade my soldering iron"
       ],
-      "tags": ["electronics", "audio", "cosplay"]
+      "tags": [
+        "electronics",
+        "audio",
+        "cosplay"
+      ]
     }
   ]
 }

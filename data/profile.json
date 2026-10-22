@@ -3,8 +3,8 @@
   "handle": "sky-is-green",
   "tagline": "Taking systems apart, analysing them, and rebuilding them smaller.",
   "about": [
-    "I take things apart to see how they work, then put them back together more efficiently. That loop, [reverse-engineering](https://en.wikipedia.org/wiki/Reverse_engineering) in the broad sense, is the whole job description: [an inference engine's step time drops by fusion](https://github.com/sky-is-green/Strata), a 27B [ternary](https://en.wikipedia.org/wiki/Balanced_ternary) model's storage format becomes [a forensics report](https://github.com/sky-is-green/bonsai2-ternary-forensics), and a [QR code](https://en.wikipedia.org/wiki/QR_code) turns into [pixel art that still scans](https://github.com/sky-is-green/pixelqr).",
-    "Lately that means low-bit everything: [ternary quantisation](https://github.com/sky-is-green/scion), trained corrections, and the small harnesses that prove the numbers. If a model can't survive being rebuilt at ~2 bits per weight, I want to know exactly why.",
+    "I take things apart to see how they work, then put them back together more efficiently. That loop, [reverse-engineering](https://en.wikipedia.org/wiki/Reverse_engineering) in the broad sense, is the whole job description: [an inference engine's step time drops by fusion](https://github.com/sky-is-green/Strata), a 27B [ternary](https://en.wikipedia.org/wiki/Balanced_ternary) model's storage format becomes [a forensics report](https://github.com/sky-is-green/bonsai2-ternary-forensics), and a [QR code](https://en.wikipedia.org/wiki/QR_code) turns into [pixel art that still scans](https://github.com/sky-is-green/pixelqr). The current one is [Hive](https://github.com/sky-is-green/hive): the memory, verification and routing work in one public stack, with both papers and the harness in the repo.",
+    "Lately that means low-bit everything: [ternary quantisation](https://github.com/sky-is-green/scion), trained corrections, and the small harnesses that prove the numbers. If a model can't survive being rebuilt at ~2 bits per weight, I want to know exactly why. Hive is the harness for that work; Splinter Memory is the context layer and the Hive Cascade is the verification loop.",
     "Away from the keyboard: [3D printing](https://en.wikipedia.org/wiki/3D_printing) (the same teardown loop, now with steppers and plastic) and a [soldering](https://en.wikipedia.org/wiki/Soldering) iron close at hand, for electronics, wiring, and repairs that keep turning into projects.",
     "Retro computing is the long-running love: old machines, phosphor terminals, and the elegance of doing more with fewer bits.",
     "[Before modern computing](https://en.wikipedia.org/wiki/History_of_computing), the engineers and scientists of yester-decade foresaw many of the issues we face with technology *today*. Some even went further and tried to fix problems their peers could not. They built machines they thought we would be using today, and their work still runs in digital systems everywhere. When I hit a problem I cannot solve, I turn to the people who dared to theorise about it."
@@ -20,13 +20,67 @@
     ]
   },
   "skills": [
-    { "group": "software", "items": ["LLM internals", "quantization", "ternary models", "MoE", "inference engines", "kernels", "model forensics", "evaluation", "tests", "memory", "RAG", "agents", "procedural generation", "non-AI generative art", "Firefox extensions"] },
-    { "group": "hardware", "items": ["soldering", "electronics", "circuitry design", "breadboards", "robotics", "3D printing"] },
-    { "group": "interests", "items": ["old machines", "phosphor terminals", "low-bit everything", "3D modelling and printing", "animation", "software and video games", "science and technology", "history"] }
+    {
+      "group": "software",
+      "items": [
+        "LLM internals",
+        "quantization",
+        "ternary models",
+        "MoE",
+        "inference engines",
+        "kernels",
+        "model forensics",
+        "evaluation",
+        "tests",
+        "memory",
+        "RAG",
+        "agents",
+        "procedural generation",
+        "non-AI generative art",
+        "Firefox extensions",
+        "verification",
+        "routing",
+        "context curation"
+      ]
+    },
+    {
+      "group": "hardware",
+      "items": [
+        "soldering",
+        "electronics",
+        "circuitry design",
+        "breadboards",
+        "robotics",
+        "3D printing"
+      ]
+    },
+    {
+      "group": "interests",
+      "items": [
+        "old machines",
+        "phosphor terminals",
+        "low-bit everything",
+        "3D modelling and printing",
+        "animation",
+        "software and video games",
+        "science and technology",
+        "history"
+      ]
+    }
   ],
   "links": [
-    { "label": "github", "url": "https://github.com/sky-is-green" },
-    { "label": "hugging face", "url": "https://huggingface.co/SkyIsNotGreen" }
+    {
+      "label": "hive",
+      "url": "https://github.com/sky-is-green/hive"
+    },
+    {
+      "label": "github",
+      "url": "https://github.com/sky-is-green"
+    },
+    {
+      "label": "hugging face",
+      "url": "https://huggingface.co/SkyIsNotGreen"
+    }
   ],
   "contact": {
     "email": "qbz7imbtw@mozmail.com",
